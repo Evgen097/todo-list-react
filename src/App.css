@@ -36,3 +36,45 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+html, body{
+  height: 100vh;
+  background-color: darkslategray;
+}
+h1{
+  color: white;
+}
+.container{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+
+}
+
+.menu ul {
+  margin: 20px  10px 10px 20px;
+}
+
+.menu li {
+  display: inline-block;
+  margin: 0px  0px 0px 20px;
+  font-family: sans-serif;
+  font-size: 1.2em;
+  line-height: 40px;
+  height: 40px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+}

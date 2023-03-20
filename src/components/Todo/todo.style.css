@@ -1,0 +1,88 @@
+
+.todo{
+    position: relative;
+    margin: 20px 0px 20px 0px;
+    padding: 10px 10px 10px 10px;
+    min-width: 450px;
+    /*background-color: orange;*/
+    border: 1px solid white;
+    border-radius: 10px;
+    font-size: 28px;
+}
+.todoform{
+
+}
+.todo_image{
+    position: absolute;
+    display: inline-block;
+    width: 30px;
+}
+.todo_image img{
+    width: 100%;
+    animation: App-logo-spin infinite 20s linear;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.todoinput {
+    margin: 0px 0px 0px 50px;
+    padding: 8px;
+    width: 250px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 22px;
+    outline: none;
+}
+.todoinput:focus {
+    color: #c86e6e;
+    font-style: italic;
+    box-shadow: 0 0 5px white;
+    /*width: 260px;*/
+}
+.todoinput:active {
+
+}
+
+.todo_checked{
+    position: absolute;
+    display: inline-block;
+    width: 30px;
+    margin: 8px 0px 0px 6px;
+    transition: all 0.3s ease;
+
+}
+.todo_checked img{
+    width: 100%;
+}
+.todo_checked img:hover{
+    transform: translate(0px, 2px);
+    border-radius: 10px;
+    background-color: rgba(130, 170, 130, 0.23);
+
+}
+.btn_remove{
+    display: inline-block;
+    margin: 0px 0px 0px 50px;
+    width: 30px;
+    transform: translate(0px, 7px);
+    transition: all 0.3s ease;
+}
+.btn_remove img{
+    width: 100%;
+}
+.btn_remove img:hover{
+    transform: translate(0px, 3px);
+    background-color: rgba(255, 69, 0, 0.45);
+    border-radius: 10px;
+    border: none;
+}
+.checked{
+    text-decoration: line-through;
+}

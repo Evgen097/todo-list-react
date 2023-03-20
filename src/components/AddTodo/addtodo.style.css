@@ -1,0 +1,38 @@
+
+.addtodo{
+    min-width: 450px;
+}
+.addtodo_form{
+    margin: 50px 0px 0px 0px;
+
+}
+.addtodo_input{
+    margin: 0px 0px 50px 50px;
+    padding: 8px;
+    width: 250px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 22px;
+    outline: none;
+}
+.btn_add{
+    color: white;
+    font-size: 24px;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 20px 10px 20px;
+    background-color: #439292;
+    margin-left: 20px;
+    transition: all 0.3s ease;
+
+}
+.btn_add:hover{
+    cursor: pointer;
+    background-color: #5fa4a4;
+    transform: translate(0px, 3px);
+}
+.btn_add:active{
+    background-color: #06d5d5;
+    box-shadow: 0 0 10px white;
+}
