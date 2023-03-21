@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     todos: [
@@ -16,11 +16,12 @@ export const todosSlice = createSlice({
             state.todos.push(action.payload)
         },
         removeTodo: (state, action) => {
-            state.todos = state.todos.filter(elem => elem.id !== action.id);
+            state.todos = state.todos.filter(elem => elem.id !== action.payload);
         },
         changeTodo: (state, action) => {
+            let payload = action.payload;
             state.todos = state.todos.map(elem => {
-                if(elem.id === action.id) elem[action.prop] = action.payload;
+                if(elem.id === payload.id) elem[payload.prop] = payload.payload;
                 return elem;
             });
         },

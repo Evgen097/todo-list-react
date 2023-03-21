@@ -1,48 +1,32 @@
 import React, {useState} from 'react';
-import Todo from "../Todo/Todo";
+
 import AddTodo from "../AddTodo/AddTodo";
 import Todos from "./Todos";
+import { useSelector, useDispatch } from 'react-redux'
 
-let todosCollection = [
-    {id: 0, text: 'buy bread', finished: false},
-    {id: 1, text: 'go to work', finished: false},
-    {id: 2, text: 'watch film', finished: true},
-];
+import {addTodo, removeTodo, changeTodo} from "../../store/todoSlice";
+import {scrollWindowBy, Todo} from "../../utils/utils";
+
 
 const TodosContainer = () => {
-    let [todos, setTodos] = useState(todosCollection)
+    let todos = useSelector((state) => state.todosPage.todos)
+    const dispatch = useDispatch();
+
     let handleInputChange = (id, prop, payload)=>{
-        todos = todos.map(elem => {
-            if(elem.id === id) elem[prop] = payload;
-            return elem;
-        });
-        setTodos([...todos])
+        dispatch(changeTodo({id, prop, payload}));
     }
     let addNewTodo = (text)=> {
-        let maxId = ()=> {
-            if(!todos.length) return 1;
-            let todo = todos.reduce((prev, cur)=> prev.id > cur.id ? prev : cur);
-            return todo.id + 1;
-        }
-        let todo =   {id: maxId(), text: text, finished: false};
-        todos.push(todo)
-        setTodos([...todos])
-        setTimeout(()=>{
-            window.scrollBy({
-                left: 0, // на какое количество пикселей прокрутить вправо от текущей позиции
-                top: 100, // на какое количество пикселей прокрутить вниз от текущей позиции
-                behavior: 'smooth', // определяет плавность прокрутки: 'auto' - мгновенно (по умолчанию), 'smooth' - плавно
-            });
-        })
+        let todo = Todo.createTodo({id: Todo.createId(todos), text: text, finished: false});
+        dispatch(addTodo( todo ));
+        scrollWindowBy();
     }
-    let removeTodo = (id)=> {
-        todos = todos.filter(elem => elem.id !== id);
-        setTodos(todos)
+    let handleRemoveTodo = (id)=> {
+        dispatch(removeTodo(id))
     }
     return (
         <div className={'container'}>
             <h1>Todo list</h1>
-            <Todos todos={todos} handleInputChange={handleInputChange} removeTodo={removeTodo}></Todos>
+            <Todos todos={todos} handleInputChange={handleInputChange} handleRemoveTodo={handleRemoveTodo}></Todos>
             <AddTodo addNewTodo={addNewTodo}></AddTodo>
         </div>
     );

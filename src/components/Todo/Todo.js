@@ -13,7 +13,7 @@ let images = ["/images/free-icon-alarm-clock-9986729.png",
     "/images/free-icon-human-9986839.png",]
 
 
-const Todo = ({todo, handleInputChange, removeTodo}) => {
+const Todo = ({todo, handleInputChange, handleRemoveTodo}) => {
     let imgSrc = ()=>{
         let num = Math.floor( Math.random()* images.length);
         return images[num]
@@ -33,7 +33,7 @@ const Todo = ({todo, handleInputChange, removeTodo}) => {
                     onClick={(e)=>handleInputChange(todo.id, 'finished', !todo.finished)}>
                         <img src="/images/checked.png" alt=""></img>
                     </div>
-                    <span className="btn_remove" onClick={(e)=> removeTodo(todo.id)}>
+                    <span className="btn_remove" onClick={(e)=> handleRemoveTodo(todo.id)}>
                     <img src="/images/remove.png" alt=""></img>
                 </span>
             </form>
