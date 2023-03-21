@@ -1,0 +1,137 @@
+
+html, body{
+    height: 100vh;
+    background-color: rgb(199, 185, 131);
+    font-family: Consolas;
+}
+.container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.header{
+    background-color: #282c34;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.header ul{
+    width: 500px;
+    display: flex;
+    justify-content: space-around;
+}
+.header ul li{
+    list-style: none;
+    padding: 5px;
+}
+.header ul li a{
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+}
+.header ul li a:hover{
+    color: orange;
+}
+.header .logo{
+    color: white;
+    font-size: 28px;
+    margin-top: 23px;
+}
+.header .logo:hover{
+    color: greenyellow;
+}
+.main{
+    background-color: darkslategrey;
+    flex-grow: 1;
+}
+.footer{
+    background-color: #282c34;
+    display: flex;
+    flex-direction: column;
+}
+.footer_info{
+    display: flex;
+    /*background-color: orange;*/
+    justify-content: space-around;
+    align-items: center;
+}
+.footer_info ul{
+    list-style: none;
+}
+.footer_info ul li a{
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+}
+.footer_info ul li a:hover{
+    color: orange;
+}
+.contacts{
+    color: white;
+}
+.copyright{
+    text-align: center;
+    margin: 10px;
+    color: white;
+}
+
+.main{
+    display: flex;
+    flex-direction: row;
+}
+.sidebar{
+    min-width: 200px;
+    padding: 0px  20px 0px 0px;
+    background-color: #439292;
+    overflow: hidden;
+}
+.sidebar ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+.sidebar ul li{
+    width: 127%;
+    color: white;
+    background-color: #439292;
+    margin: 0px 0px -1px -40px;
+    padding: 10px 10px 10px 10px;
+    border: 1px solid white;
+}
+.sidebar ul li:hover{
+    cursor: pointer;
+    background-color: #06d5d5;
+}
+
+.items{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+.item{
+    border: 1px solid white;
+    width: 25%;
+    min-width: 200px;
+    padding: 20px;
+}
+.item__img{
+    /*width: 100%;*/
+}
+.item__img img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+
+}
+.item__title{
+
+}
+.item__descr{
+
+}
+.item__price{
+
+}
+
